@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.su.coupons.mapper.CouponsMapper">
 
-    <resultMap id="BaseResultMap" type="com.su.coupons.domain/dao.Coupons">
+    <resultMap id="BaseResultMap" type="com.su.coupons.domain.dao.Coupons">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="code" column="code" jdbcType="VARCHAR"/>
             <result property="name" column="name" jdbcType="VARCHAR"/>
@@ -14,11 +14,13 @@
             <result property="state" column="state" jdbcType="INTEGER"/>
             <result property="distributeRule" column="distribute_rule" jdbcType="INTEGER"/>
             <result property="useRule" column="use_rule" jdbcType="INTEGER"/>
+            <result property="bearer" column="bearer" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,code,name,
         inventory,active_time,coupons_type,
-        state,distribute_rule,use_rule
+        state,distribute_rule,use_rule,
+        bearer
     </sql>
 </mapper>

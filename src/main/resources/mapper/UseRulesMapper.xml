@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.su.coupons.mapper.UseRulesMapper">
 
-    <resultMap id="BaseResultMap" type="com.su.coupons.domain/dao.UseRules">
+    <resultMap id="BaseResultMap" type="com.su.coupons.domain.dao.UseRules">
             <id property="id" column="id" jdbcType="INTEGER"/>
             <result property="scope" column="scope" jdbcType="INTEGER"/>
             <result property="store" column="store" jdbcType="INTEGER"/>
@@ -13,12 +13,11 @@
             <result property="date" column="date" jdbcType="DATE"/>
             <result property="active" column="active" jdbcType="DATE"/>
             <result property="channel" column="channel" jdbcType="INTEGER"/>
-            <result property="useRule" column="use_rule" jdbcType="INTEGER"/>
     </resultMap>
 
     <sql id="Base_Column_List">
         id,scope,store,
         doorsill,group,date,
-        active,channel,use_rule
+        active,channel
     </sql>
 </mapper>

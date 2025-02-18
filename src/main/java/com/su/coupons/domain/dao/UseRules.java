@@ -55,11 +55,6 @@ public class UseRules implements Serializable {
      */
     private Integer channel;
 
-    /**
-     * 
-     */
-    private Integer useRule;
-
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -82,8 +77,7 @@ public class UseRules implements Serializable {
             && (this.getGroup() == null ? other.getGroup() == null : this.getGroup().equals(other.getGroup()))
             && (this.getDate() == null ? other.getDate() == null : this.getDate().equals(other.getDate()))
             && (this.getActive() == null ? other.getActive() == null : this.getActive().equals(other.getActive()))
-            && (this.getChannel() == null ? other.getChannel() == null : this.getChannel().equals(other.getChannel()))
-            && (this.getUseRule() == null ? other.getUseRule() == null : this.getUseRule().equals(other.getUseRule()));
+            && (this.getChannel() == null ? other.getChannel() == null : this.getChannel().equals(other.getChannel()));
     }
 
     @Override
@@ -98,7 +92,6 @@ public class UseRules implements Serializable {
         result = prime * result + ((getDate() == null) ? 0 : getDate().hashCode());
         result = prime * result + ((getActive() == null) ? 0 : getActive().hashCode());
         result = prime * result + ((getChannel() == null) ? 0 : getChannel().hashCode());
-        result = prime * result + ((getUseRule() == null) ? 0 : getUseRule().hashCode());
         return result;
     }
 
@@ -116,7 +109,6 @@ public class UseRules implements Serializable {
         sb.append(", date=").append(date);
         sb.append(", active=").append(active);
         sb.append(", channel=").append(channel);
-        sb.append(", useRule=").append(useRule);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

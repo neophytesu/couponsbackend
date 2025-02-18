@@ -1,5 +1,6 @@
 package com.su.coupons.domain.dao;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -59,6 +60,11 @@ public class Coupons implements Serializable {
      */
     private Integer useRule;
 
+    /**
+     * 费用承担方
+     */
+    private String bearer;
+
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
@@ -82,7 +88,8 @@ public class Coupons implements Serializable {
             && (this.getCouponsType() == null ? other.getCouponsType() == null : this.getCouponsType().equals(other.getCouponsType()))
             && (this.getState() == null ? other.getState() == null : this.getState().equals(other.getState()))
             && (this.getDistributeRule() == null ? other.getDistributeRule() == null : this.getDistributeRule().equals(other.getDistributeRule()))
-            && (this.getUseRule() == null ? other.getUseRule() == null : this.getUseRule().equals(other.getUseRule()));
+            && (this.getUseRule() == null ? other.getUseRule() == null : this.getUseRule().equals(other.getUseRule()))
+            && (this.getBearer() == null ? other.getBearer() == null : this.getBearer().equals(other.getBearer()));
     }
 
     @Override
@@ -98,6 +105,7 @@ public class Coupons implements Serializable {
         result = prime * result + ((getState() == null) ? 0 : getState().hashCode());
         result = prime * result + ((getDistributeRule() == null) ? 0 : getDistributeRule().hashCode());
         result = prime * result + ((getUseRule() == null) ? 0 : getUseRule().hashCode());
+        result = prime * result + ((getBearer() == null) ? 0 : getBearer().hashCode());
         return result;
     }
 
@@ -116,6 +124,7 @@ public class Coupons implements Serializable {
         sb.append(", state=").append(state);
         sb.append(", distributeRule=").append(distributeRule);
         sb.append(", useRule=").append(useRule);
+        sb.append(", bearer=").append(bearer);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
